@@ -9,8 +9,8 @@ const searchBtn = document.querySelector('.search')
 
 const removeTask = (e) => {
     const index = e.target.parentNode.dataset.key;
+    taskNumber.textContent = listItems.length - 1;
     toDoList.splice(index, 1);
-    taskNumber.textContent = listItems.length;
 
     //Regenerate array with valid indexes
     renderList();
@@ -25,6 +25,8 @@ const addTask = (e) => {
     task.innerHTML = titleTask + "<button>Usuń</button>"
     toDoList.push(task);
 
+    input.value = "";
+
     renderList();
 
     // ul.appendChild(task);
@@ -38,9 +40,7 @@ const searchText = (e) => {
     e.preventDefault();
     const searchText = input.value.toLowerCase();
     const searchList = toDoList.filter(li => li.textContent.toLowerCase().includes(searchText));
-    console.log(searchText);
-    console.log(toDoList);
-    console.log(searchList);
+
     ul.textContent = "";
     searchList.forEach(li => ul.appendChild(li));
 }
