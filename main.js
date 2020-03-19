@@ -5,6 +5,7 @@ const ul = document.querySelector('ul');
 const taskNumber = document.querySelector('h1 span');
 const listItems = document.getElementsByClassName('task');
 const input = document.querySelector('input');
+const searchBtn = document.querySelector('.search')
 
 const removeTask = (e) => {
     const index = e.target.parentNode.dataset.key;
@@ -33,7 +34,16 @@ const addTask = (e) => {
 }
 
 
-
+const searchText = (e) => {
+    e.preventDefault();
+    const searchText = input.value.toLowerCase();
+    const searchList = toDoList.filter(li => li.textContent.toLowerCase().includes(searchText));
+    console.log(searchText);
+    console.log(toDoList);
+    console.log(searchList);
+    ul.textContent = "";
+    searchList.forEach(li => ul.appendChild(li));
+}
 
 const renderList = () => {
     ul.textContent = "";
@@ -43,4 +53,5 @@ const renderList = () => {
     })
 }
 
-form.addEventListener('submit', addTask)
+form.addEventListener('submit', addTask);
+input.addEventListener('input', searchText);
