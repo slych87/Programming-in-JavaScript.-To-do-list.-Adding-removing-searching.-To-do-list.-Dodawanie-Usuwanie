@@ -1,6 +1,8 @@
 # Programming-in-JavaScript.-To-do-list.-Adding-removing-searching.-To-do-list.-Dodawanie-Usuwanie
 Programming in JavaScript. To do list. Adding, removing, searching. (To do list. Dodawanie, Usuwanie, wyszukiwanie.)
 
+This is the site created at the end of the course. I put it on github to show what knowledge I have about JavaScript.
+
 To do list.
 User manual.
 Enter the text and press enter.
